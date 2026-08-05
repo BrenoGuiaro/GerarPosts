@@ -1,0 +1,200 @@
+.header {
+    width: 100%;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 22px 30px;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 6px 20px rgba(0,0,0,.06);
+
+    margin-bottom: 25px;
+}
+
+/* ========================== */
+/* LOGO */
+/* ========================== */
+
+.header-logo{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.header-logo img{
+    width:72px;
+    height:auto;
+}
+
+.header-logo-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.header-logo-text h2{
+    margin:0;
+
+    font-size:27px;
+    color:#202020;
+    font-weight:700;
+}
+
+.header-logo-text span{
+    margin-top:3px;
+
+    font-size:15px;
+    color:#6e6e6e;
+}
+
+/* ========================== */
+/* TÍTULO */
+/* ========================== */
+
+.header-title{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    text-align:center;
+}
+
+.header-title-icon{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:#d70010;
+    font-size:30px;
+
+    background:#fff5f5;
+
+    border:2px solid #ffdcdc;
+}
+
+.header-title h1{
+
+    margin:0;
+
+    color:#d70010;
+
+    font-size:42px;
+    font-weight:700;
+}
+
+.header-title p{
+
+    margin-top:6px;
+
+    color:#6f6f6f;
+
+    font-size:18px;
+}
+
+/* ========================== */
+/* BOTÃO */
+/* ========================== */
+
+.header-button{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:15px 28px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:white;
+
+    border:1px solid #dddddd;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+    font-size:16px;
+
+    font-weight:500;
+
+    color:#2b2b2b;
+}
+
+.header-button svg{
+    font-size:22px;
+}
+
+.header-button:hover{
+
+    background:#d70010;
+
+    color:white;
+
+    border-color:#d70010;
+
+    transform:translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(215,0,16,.25);
+}
+
+/* ========================== */
+/* RESPONSIVO */
+/* ========================== */
+
+@media(max-width:1200px){
+
+    .header{
+
+        flex-direction:column;
+
+        gap:25px;
+
+        text-align:center;
+    }
+
+    .header-logo{
+        justify-content:center;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .header{
+
+        padding:20px;
+    }
+
+    .header-logo{
+
+        flex-direction:column;
+    }
+
+    .header-title{
+
+        flex-direction:column;
+    }
+
+    .header-title h1{
+
+        font-size:32px;
+    }
+
+    .header-title p{
+
+        font-size:15px;
+    }
+
+}
