@@ -1,0 +1,859 @@
+/* ============================================================
+   CONTAINER
+============================================================ */
+
+.preview-container {
+
+    width: 100%;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 28px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+
+}
+
+
+/* ============================================================
+   TÍTULO
+============================================================ */
+
+.preview-header {
+
+    margin-bottom: 22px;
+
+}
+
+
+.preview-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.preview-title svg {
+
+    color: #d9000d;
+
+    font-size: 26px;
+
+    stroke-width: 2.5;
+
+}
+
+
+.preview-title h2 {
+
+    margin: 0;
+
+    color: #d9000d;
+
+    font-size: 21px;
+
+    font-weight: 700;
+
+}
+
+
+/* ============================================================
+   ÁREA DO PREVIEW
+============================================================ */
+
+.preview-area {
+
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+/*
+    Este container limita o tamanho visual
+    da capa no site.
+*/
+
+.preview-frame {
+
+    width: 100%;
+
+    max-width: 760px;
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    position: relative;
+
+}
+
+
+/*
+    A arte REAL continua sendo 1080 x 1080.
+
+    Ela apenas é escalada visualmente.
+*/
+
+.property-cover {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 1080px;
+
+    height: 1080px;
+
+    transform-origin: top left;
+
+    transform: scale(
+        min(
+            calc(760 / 1080),
+            calc(100vw / 1080)
+        )
+    );
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+}
+
+
+/* ============================================================
+   IMAGEM
+============================================================ */
+
+.cover-property-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 1;
+
+}
+
+
+/* ============================================================
+   OVERLAY
+============================================================ */
+
+.cover-image-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background:
+
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.03),
+            rgba(0,0,0,0)
+        );
+
+}
+
+
+/* ============================================================
+   LOGO
+============================================================ */
+
+.cover-logo-container {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 90%;
+
+    height: 215px;
+
+    z-index: 10;
+
+}
+
+
+/* área branca */
+
+.logo-white-area {
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    width: 35%;
+
+    height: 130px;
+
+    background: #ffffff;
+
+    border-bottom-right-radius: 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 48px;
+    border-bottom: 7px solid red;
+    border-right: 7px solid red;
+
+}
+
+
+
+
+
+/* logo */
+
+.cover-logo {
+
+    width: 250px;
+
+    max-height: 120px;
+
+    object-fit: contain;
+
+    object-position: left center;
+
+}
+
+.cover-code {
+
+    position: absolute;
+
+    right: 0;
+
+    top: 115px;
+
+    width: 300px;
+
+    height: 70px;
+
+    z-index: 12;
+
+    background: #e30613;
+
+    border-radius: 14px 0 0 14px;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 25px;
+
+}
+
+
+/* linha vertical */
+
+.code-line {
+
+    width: 3px;
+
+    height: 80%;
+
+    background: #ffffff;
+
+    margin-right: 20px;
+
+}
+
+
+/* conteúdo */
+
+.code-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+
+}
+
+
+.code-content span {
+
+    font-size: 17px;
+
+    font-weight: 400;
+
+}
+
+
+.code-content strong {
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+}
+
+
+/* ============================================================
+   INFORMAÇÕES
+============================================================ */
+
+.cover-information {
+
+    position: absolute;
+
+    left: 35px;
+
+    bottom:130px;
+
+    z-index: 15;
+
+}
+
+
+/* ============================================================
+   LOCAÇÃO / VENDA
+============================================================ */
+
+.cover-type {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 45px;
+
+    padding: 0 12px;
+
+    background: #e30613;
+
+    color: #ffffff;
+
+    border-radius: 8px;
+
+    font-size: 27px;
+
+    font-weight: 800;
+
+}
+
+
+/* ============================================================
+   TIPO DO IMÓVEL
+============================================================ */
+
+.cover-information h1 {
+
+    margin: 14px 0 5px;
+
+    color: black;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 50px;
+
+    line-height: 0.95;
+
+    letter-spacing: -2px;
+
+  
+
+}
+
+
+/* ============================================================
+   LINHA
+============================================================ */
+
+.property-line {
+
+    width: 180px;
+
+    height: 4px;
+
+    background: #e30613;
+
+    margin: 8px 0 12px;
+
+}
+
+
+/* ============================================================
+   LOCALIZAÇÃO
+============================================================ */
+
+.cover-location {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 26px;
+
+    font-weight: 700;
+
+    color: #111111;
+
+}
+
+
+
+
+
+/* ============================================================
+   FORMA VERMELHA INFERIOR DIREITA
+============================================================ */
+
+.red-bottom-shape {
+
+    position: absolute;
+
+    right: -5px;
+
+    bottom: 80px;
+
+    width: 520px;
+
+    height: 530px;
+
+    z-index: 5;
+
+    overflow: hidden;
+
+    clip-path: polygon(
+
+        100% 0%,
+
+        100% 100%,
+
+        0% 100%,
+
+        18% 74%,
+
+        42% 50%,
+
+        63% 28%,
+
+        80% 12%
+
+    );
+
+    background: #e30613;
+
+}
+
+
+/* ============================================================
+   PARTE INTERNA
+============================================================ */
+
+.red-shape-inner {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 100%;
+
+}
+
+
+/* ============================================================
+   MARCA D'ÁGUA
+============================================================ */
+
+.watermark-logo {
+
+    position: absolute;
+
+    right: 70px;
+
+    bottom: 50px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 190px;
+
+    line-height: 1;
+
+    font-weight: 900;
+
+    color: rgba(150, 0, 0, 0.32);
+
+}
+
+
+/* ============================================================
+   RODAPÉ
+============================================================ */
+
+.cover-footer {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+    height: 80px;
+
+    z-index: 30;
+
+    display: flex;
+
+    background: #ffffff;
+
+}
+
+
+/* ============================================================
+   TELEFONE
+============================================================ */
+
+.footer-phone {
+
+    position: relative;
+
+    width: 43%;
+
+    height: 100%;
+
+    background: #e30613;
+
+    color: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    padding-left: 55px;
+
+}
+
+
+.footer-phone::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: -35px;
+
+    top: 0;
+
+    width: 55px;
+
+    height: 100%;
+
+    background: #e30613;
+
+    transform: skewX(28deg);
+
+}
+
+
+.footer-phone svg {
+
+    width: 32px;
+
+    height: 32px;
+
+    z-index: 2;
+
+}
+
+
+.footer-phone span {
+
+    position: relative;
+
+    z-index: 2;
+
+    font-size: 21px;
+
+    white-space: nowrap;
+
+}
+
+
+/* ============================================================
+   SITE
+============================================================ */
+
+.footer-website {
+
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    padding-left: 30px;
+
+}
+
+
+.footer-website svg {
+
+    width: 32px;
+
+    height: 32px;
+
+    color: #e30613;
+
+}
+
+
+.footer-website span {
+
+    font-size: 20px;
+
+    color: #111111;
+
+    white-space: nowrap;
+
+}
+
+
+/* ============================================================
+   ÁREA INFERIOR DO SISTEMA
+============================================================ */
+
+.preview-bottom {
+
+    border-top: 1px solid #eeeeee;
+
+    margin-top: 25px;
+
+    padding-top: 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+}
+
+
+/* ============================================================
+   DICA
+============================================================ */
+
+.preview-tip {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    padding: 12px 15px;
+
+    background: #fafafa;
+
+    border-radius: 10px;
+
+}
+
+
+.tip-icon {
+
+    font-size: 20px;
+
+}
+
+
+.preview-tip strong {
+
+    font-size: 14px;
+
+}
+
+
+.preview-tip p {
+
+    margin: 3px 0 0;
+
+    font-size: 13px;
+
+    color: #666;
+
+}
+
+
+/* ============================================================
+   BOTÕES
+============================================================ */
+
+.preview-actions {
+
+    display: flex;
+
+    gap: 12px;
+
+}
+
+
+.preview-actions button {
+
+    height: 48px;
+
+    padding: 0 22px;
+
+    border-radius: 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+/* limpar */
+
+.clear-button {
+
+    border: 1px solid #dcdcdc;
+
+    background: #ffffff;
+
+    color: #222222;
+
+}
+
+
+.clear-button:hover {
+
+    background: #f5f5f5;
+
+}
+
+
+/* download */
+
+.download-button {
+
+    border: 1px solid #e30613;
+
+    background: #e30613;
+
+    color: #ffffff;
+
+}
+
+
+.download-button:hover {
+
+    background: #c9000b;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* ============================================================
+   RESPONSIVIDADE
+============================================================ */
+
+@media (max-width: 900px) {
+
+    .preview-container {
+
+        padding: 20px;
+
+    }
+
+    .preview-bottom {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+    .preview-actions {
+
+        width: 100%;
+
+    }
+
+    .preview-actions button {
+
+        flex: 1;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .preview-container {
+
+        padding: 15px;
+
+    }
+
+    .preview-title h2 {
+
+        font-size: 18px;
+
+    }
+
+}

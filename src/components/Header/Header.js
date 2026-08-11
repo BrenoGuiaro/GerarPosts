@@ -10,26 +10,21 @@ export default function Header() {
         <img
           src={logo}
           alt="Logo"
+        
         />
 
-        <div className="header-logo-text">
-          <h2>Manoel Jeronimo</h2>
-          <span>Corretor de imóveis</span>
-        </div>
       </div>
 
       {/* Título */}
       <div className="header-title">
         <div className="header-title-icon">
-          <FiImage />
+          <FiImage size={20} />
         </div>
 
         <div>
-          <h1>Gerador de Capas</h1>
+          <h3>Gerador de Capas</h3>
 
-          <p>
-            Gere capas profissionais para suas postagens em redes sociais.
-          </p>
+          
         </div>
       </div>
 
