@@ -1,5 +1,5 @@
 import "./Preview.css";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import html2canvas from "html2canvas";
 
 import {
@@ -10,8 +10,12 @@ import {
     FiDownload
 } from "react-icons/fi";
 
-import { FaMapMarkerAlt as IconMap} from "react-icons/fa";
+import { FaPhoneAlt as Phone} from "react-icons/fa";
+
+import { FaMapMarkerAlt as IconMap } from "react-icons/fa";
 import logoC from '../../images/logo2.png'
+
+import teste from '../../images/teste.png'
 
 
 export default function Preview({
@@ -31,32 +35,43 @@ export default function Preview({
 
         const element = coverRef.current;
 
-        if (!element) {
-            return;
-        }
+        if (!element) return;
 
-        const images = element.querySelectorAll("img");
 
-        await Promise.all(
+        /*
+        ============================================================
+        SALVA A ESCALA ATUAL
+        ============================================================
+        */
 
-            Array.from(images).map((img) => {
+        const currentTransform = element.style.transform;
 
-                if (img.complete) {
-                    return Promise.resolve();
-                }
 
-                return new Promise((resolve) => {
+        /*
+        ============================================================
+        REMOVE A ESCALA DO PREVIEW
+        ============================================================
+        */
 
-                    img.onload = resolve;
+        element.style.transform = "scale(1)";
 
-                    img.onerror = resolve;
 
-                });
+        /*
+        ============================================================
+        AGUARDA O NAVEGADOR ATUALIZAR
+        ============================================================
+        */
 
-            })
+        await new Promise(resolve => {
+            requestAnimationFrame(resolve);
+        });
 
-        );
 
+        /*
+        ============================================================
+        CAPTURA EXATAMENTE 1080 × 1080
+        ============================================================
+        */
 
         const canvas = await html2canvas(element, {
 
@@ -76,6 +91,22 @@ export default function Preview({
 
         });
 
+
+        /*
+        ============================================================
+        RESTAURA O PREVIEW
+        ============================================================
+        */
+
+        element.style.transform = currentTransform;
+
+
+        /*
+        ============================================================
+        GARANTE 1080 × 1080
+        ============================================================
+        */
+
         const finalCanvas = document.createElement("canvas");
 
         finalCanvas.width = 1080;
@@ -91,56 +122,82 @@ export default function Preview({
             canvas,
 
             0,
-
             0,
 
             1080,
-
             1080
 
         );
 
 
         /*
-        --------------------------------------------------------
-        GERA PNG
-        --------------------------------------------------------
+        ============================================================
+        DOWNLOAD
+        ============================================================
         */
 
-        finalCanvas.toBlob(
+        finalCanvas.toBlob((blob) => {
 
-            (blob) => {
-
-                if (!blob) {
-                    return;
-                }
+            if (!blob) return;
 
 
-                const url = URL.createObjectURL(blob);
-
-                const link = document.createElement("a");
-
-                link.href = url;
-
-                link.download = `${codImob}-capa.png`;
+            const url = URL.createObjectURL(blob);
 
 
-                document.body.appendChild(link);
+            const link = document.createElement("a");
 
-                link.click();
+            link.href = url;
 
-                document.body.removeChild(link);
+            link.download = `${codImob}-capa-1080x1080.png`;
 
 
-                URL.revokeObjectURL(url);
+            document.body.appendChild(link);
 
-            },
+            link.click();
 
-            "image/png"
+            document.body.removeChild(link);
 
-        );
+
+            URL.revokeObjectURL(url);
+
+        }, "image/png");
 
     };
+
+    const [previewScale, setPreviewScale] = useState(1);
+
+    useEffect(() => {
+
+        const updateScale = () => {
+
+            const frame = document.querySelector(".preview-frame");
+
+            if (!frame) return;
+
+            const availableWidth = frame.clientWidth;
+
+            const scale = availableWidth / 1080;
+
+            setPreviewScale(scale);
+
+        };
+
+
+        updateScale();
+
+        window.addEventListener("resize", updateScale);
+
+
+        return () => {
+
+            window.removeEventListener(
+                "resize",
+                updateScale
+            );
+
+        };
+
+    }, []);
 
 
     return (
@@ -180,6 +237,9 @@ export default function Preview({
                     <div
                         className="property-cover"
                         ref={coverRef}
+                        style={{
+                            transform: `scale(${previewScale})`
+                        }}
                     >
 
                         <img
@@ -260,7 +320,7 @@ export default function Preview({
 
                             <div className="cover-location">
 
-                                <IconMap color="red" size={30}/>
+                                <IconMap color="red" size={30} />
 
                                 <span>
                                     {bairro}
@@ -275,16 +335,9 @@ export default function Preview({
                             CURVA / FORMA VERMELHA
                         ================================================== */}
 
-                        <div className="red-bottom-shape">
+                        <div className="image-subs">
 
-                            <div className="red-shape-inner">
-
-                                <div className="watermark-logo">
-                                    J
-                                </div>
-
-                            </div>
-
+                            
                         </div>
 
 
@@ -299,7 +352,7 @@ export default function Preview({
 
                             <div className="footer-phone">
 
-                                <FiPhone />
+                                <Phone />
 
                                 <span>
                                     (19) 99303-0194
@@ -315,9 +368,15 @@ export default function Preview({
                                 <FiGlobe />
 
                                 <span>
-                                    https://mjeronimoimoveis.com.br
-                                </span>
+                                    https://<span className="span-bold">mjeronimoimoveis</span>.com.br
+                                </span>~
 
+                                <img src={teste}/>
+
+                            </div>
+
+                            <div className="footer-creci">
+                                CRECISP: 278536F
                             </div>
 
 

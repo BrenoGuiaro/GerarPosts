@@ -115,24 +115,9 @@ export default function SidebarForm({
 
       </div>
 
-      {/* Cidade */}
-      <div className="form-group">
+      
 
-        <label>Cidade (Opcional)</label>
-
-        <input
-          type="text"
-          placeholder="Mococa - SP"
-        />
-
-      </div>
-
-      {/* Botão */}
-      <button className="generate-button">
-
-        GERAR CAPA
-
-      </button>
+     
 
     </aside>
   );

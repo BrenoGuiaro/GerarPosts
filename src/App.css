@@ -1,5 +1,7 @@
+body{
+    background: rgb(197, 197, 197);
+}
 .organization{
-    border: 1px solid red;
     width: 100%;
     max-width: 100%;
     display: flex;

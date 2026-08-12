@@ -1,12 +1,14 @@
 .sidebar {
 
-    background: #fff;
+    background: white;
 
     border-radius: 18px;
 
     padding: 28px;
+    margin: 10px;
 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, .06);
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
 
     display: flex;
 
@@ -14,7 +16,7 @@
 
     gap: 22px;
 
-    width: 27.5%;
+    width: 20%;
 }
 
 /* ---------------- */

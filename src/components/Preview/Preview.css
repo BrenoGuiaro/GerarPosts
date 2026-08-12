@@ -4,7 +4,7 @@
 
 .preview-container {
 
-    width: 100%;
+    width: 80%;
 
     background: #ffffff;
 
@@ -119,12 +119,8 @@
 
     transform-origin: top left;
 
-    transform: scale(
-        min(
-            calc(760 / 1080),
-            calc(100vw / 1080)
-        )
-    );
+    transform: scale(min(calc(760 / 1080),
+                calc(100vw / 1080)));
 
     overflow: hidden;
 
@@ -172,11 +168,9 @@
 
     background:
 
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.03),
-            rgba(0,0,0,0)
-        );
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.03),
+            rgba(0, 0, 0, 0));
 
 }
 
@@ -333,7 +327,7 @@
 
     left: 35px;
 
-    bottom:130px;
+    bottom: 130px;
 
     z-index: 15;
 
@@ -387,7 +381,7 @@
 
     letter-spacing: -2px;
 
-  
+
 
 }
 
@@ -453,23 +447,19 @@
 
     overflow: hidden;
 
-    clip-path: polygon(
+    clip-path: polygon(100% 0%,
 
-        100% 0%,
+            100% 100%,
 
-        100% 100%,
+            0% 100%,
 
-        0% 100%,
+            18% 74%,
 
-        18% 74%,
+            42% 50%,
 
-        42% 50%,
+            63% 28%,
 
-        63% 28%,
-
-        80% 12%
-
-    );
+            80% 12%);
 
     background: #e30613;
 
@@ -549,7 +539,7 @@
 
     position: relative;
 
-    width: 43%;
+    width: 30%;
 
     height: 100%;
 
@@ -606,9 +596,10 @@
 
     z-index: 2;
 
-    font-size: 21px;
+    font-size: 26px;
 
     white-space: nowrap;
+    font-weight: bold;
 
 }
 
@@ -624,35 +615,58 @@
     display: flex;
 
     align-items: center;
-
-    justify-content: center;
-
     gap: 18px;
 
-    padding-left: 30px;
+}
+
+.footer-website::after {
+
+    content: "";
+
+    position: absolute;
+
+
+    top: 0;
+
+    width: 40%;
+
+    height: 100%;
+
+    background: rgb(164, 92, 92);
+
+    transform: skewX(28deg);
 
 }
 
 
 .footer-website svg {
 
-    width: 32px;
+    width: 40px;
 
-    height: 32px;
+    height: 40px;
 
     color: #e30613;
+
+    z-index: 1;
+    padding-left: 30px;
 
 }
 
 
 .footer-website span {
 
-    font-size: 20px;
+    font-size: 22px;
 
     color: #111111;
 
-    white-space: nowrap;
 
+    white-space: nowrap;
+    z-index: 1;
+
+}
+
+.span-bold {
+    font-weight: bold;
 }
 
 
