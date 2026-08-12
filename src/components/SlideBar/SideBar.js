@@ -1,5 +1,5 @@
 import "./SideBar.css";
-import { FiHome, FiUpload } from "react-icons/fi";
+import { FiHome, FiUpload, FiDownload } from "react-icons/fi";
 
 
 export default function SidebarForm({
@@ -7,7 +7,9 @@ export default function SidebarForm({
   codImob, setCodImob,
   tipoAnuncio, setTipoAnuncio,
   tipoImovel, setTipoImovel,
-  bairro, setBairro }) {
+  bairro, setBairro,
+  coverRef, downloadImage
+}) {
 
   const handleImageChange = (event) => {
     const file = event.target.files[0];
@@ -16,6 +18,9 @@ export default function SidebarForm({
       setImagePreview(imageUrl);
     }
   };
+
+
+
 
   return (
     <aside className="sidebar">
@@ -82,6 +87,7 @@ export default function SidebarForm({
           <select value={tipoAnuncio} onChange={(e) => { setTipoAnuncio(e.target.value) }}>
             <option>Locação</option>
             <option>Venda</option>
+            <option>Venda e Locação</option>
           </select>
 
         </div>
@@ -113,11 +119,37 @@ export default function SidebarForm({
           onChange={(e) => { setBairro(e.target.value) }}
         />
 
+        <div className="preview-actions">
+
+
+
+
+
+
+
+
+
+
+          <button
+            className="download-button"
+            onClick={downloadImage}
+          >
+
+            <FiDownload />
+
+            BAIXAR PNG
+
+          </button>
+
+        </div>
+
       </div>
 
-      
 
-     
+
+
+
+
 
     </aside>
   );

@@ -1,12 +1,10 @@
 import "./Preview.css";
-import { useRef, useState, useEffect } from "react";
-import html2canvas from "html2canvas";
+import { useState, useEffect } from "react";
+
 
 import {
     FiEye,
     FiGlobe,
-    FiRotateCcw,
-    FiDownload
 } from "react-icons/fi";
 
 import { FaPhoneAlt as Phone} from "react-icons/fa";
@@ -16,6 +14,7 @@ import logoC from '../../images/logo.png'
 
 import detalhe from '../../images/detalhe.png'
 import logoE from '../../images/logoE.png'
+import mancha from '../../images/mancha.png'
 
 
 export default function Preview({
@@ -24,145 +23,11 @@ export default function Preview({
     tipoAnuncio,
     tipoImovel,
     bairro,
-    onClear
+    onClear,
+    coverRef
 
 }) {
 
-    const coverRef = useRef(null);
-
-
-    const downloadImage = async () => {
-
-        const element = coverRef.current;
-
-        if (!element) return;
-
-
-        /*
-        ============================================================
-        SALVA A ESCALA ATUAL
-        ============================================================
-        */
-
-        const currentTransform = element.style.transform;
-
-
-        /*
-        ============================================================
-        REMOVE A ESCALA DO PREVIEW
-        ============================================================
-        */
-
-        element.style.transform = "scale(1)";
-
-
-        /*
-        ============================================================
-        AGUARDA O NAVEGADOR ATUALIZAR
-        ============================================================
-        */
-
-        await new Promise(resolve => {
-            requestAnimationFrame(resolve);
-        });
-
-
-        /*
-        ============================================================
-        CAPTURA EXATAMENTE 1080 × 1080
-        ============================================================
-        */
-
-        const canvas = await html2canvas(element, {
-
-            width: 1080,
-
-            height: 1080,
-
-            scale: 1,
-
-            useCORS: true,
-
-            allowTaint: false,
-
-            backgroundColor: "#ffffff",
-
-            logging: false
-
-        });
-
-
-        /*
-        ============================================================
-        RESTAURA O PREVIEW
-        ============================================================
-        */
-
-        element.style.transform = currentTransform;
-
-
-        /*
-        ============================================================
-        GARANTE 1080 × 1080
-        ============================================================
-        */
-
-        const finalCanvas = document.createElement("canvas");
-
-        finalCanvas.width = 1080;
-
-        finalCanvas.height = 1080;
-
-
-        const ctx = finalCanvas.getContext("2d");
-
-
-        ctx.drawImage(
-
-            canvas,
-
-            0,
-            0,
-
-            1080,
-            1080
-
-        );
-
-
-        /*
-        ============================================================
-        DOWNLOAD
-        ============================================================
-        */
-
-        finalCanvas.toBlob((blob) => {
-
-            if (!blob) return;
-
-
-            const url = URL.createObjectURL(blob);
-
-
-            const link = document.createElement("a");
-
-            link.href = url;
-
-            link.download = `${codImob}-capa-1080x1080.png`;
-
-
-            document.body.appendChild(link);
-
-            link.click();
-
-            document.body.removeChild(link);
-
-
-            URL.revokeObjectURL(url);
-
-        }, "image/png");
-
-    };
 
     const [previewScale, setPreviewScale] = useState(1);
 
@@ -290,6 +155,8 @@ export default function Preview({
                             INFORMAÇÕES DO IMÓVEL
                         ================================================== */}
 
+                        <img src={mancha} alt="mancha" id="mancha"/>
+
                         <div className="cover-information">
 
 
@@ -331,14 +198,6 @@ export default function Preview({
                         </div>
 
 
-                        {/* ==================================================
-                            CURVA / FORMA VERMELHA
-                        ================================================== */}
-
-                        <div className="image-subs">
-
-                            
-                        </div>
 
 
                         {/* ==================================================
@@ -369,16 +228,19 @@ export default function Preview({
 
                                 <span>
                                     https://<span className="span-bold">mjeronimoimoveis</span>.com.br
-                                </span>~
+                                </span>
 
                                 <img src={detalhe} alt="detalhe" />
                                 <img src={logoE} alt="logoE" id="logoE"/>
+
+                                
 
                             </div>
 
                             <div className="footer-creci">
                                 CRECISP: 278536F
                             </div>
+
 
 
                         </div>
@@ -391,72 +253,8 @@ export default function Preview({
             </div>
 
 
-            {/* ==================================================
-                ÁREA INFERIOR
-            ================================================== */}
 
-            <div className="preview-bottom">
-
-
-                {/* DICA */}
-
-                <div className="preview-tip">
-
-                    <span className="tip-icon">
-                        💡
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Dica:
-                        </strong>
-
-                        <p>
-                            Use imagens em alta qualidade
-                            para um resultado ainda melhor!
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                {/* BOTÕES */}
-
-                <div className="preview-actions">
-
-
-                    <button
-                        className="clear-button"
-                        onClick={onClear}
-                    >
-
-                        <FiRotateCcw />
-
-                        LIMPAR CAMPOS
-
-                    </button>
-
-
-                    <button
-                        className="download-button"
-                        onClick={downloadImage}
-                    >
-
-                        <FiDownload />
-
-                        BAIXAR PNG
-
-                    </button>
-
-
-                </div>
-
-
-            </div>
-
-
+ 
         </section>
 
     );

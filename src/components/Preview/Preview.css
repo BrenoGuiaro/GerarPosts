@@ -14,6 +14,9 @@
     box-shadow:
         0 5px 20px rgba(0, 0, 0, 0.06);
 
+    border-radius: 18px;
+
+
 }
 
 
@@ -328,7 +331,7 @@
 
     bottom: 130px;
 
-    z-index: 15;
+    z-index: 50;
 
 }
 
@@ -554,6 +557,8 @@
 
     padding-left: 55px;
 
+    z-index: 10;
+
 }
 
 
@@ -614,6 +619,8 @@
     align-items: center;
     gap: 18px;
     overflow: visible;
+    z-index: 15;
+
 }
 
 /* Faixa branca inclinada */
@@ -624,14 +631,14 @@
     left: -20px;
     top: 0;
 
-    width: 40%;
+    width: 65%;
     height: 100%;
 
     background: #ffffff;
 
     transform: skewX(28deg);
 
-    z-index: 0;
+    z-index: 1;
 
     pointer-events: none;
 }
@@ -645,13 +652,13 @@
 
     color: #e30613;
 
-    z-index: 2;
+    z-index: 3;
 
-    padding-left: 30px;
+    padding-left: 2px;
 }
 
 /* Texto */
-.footer-website > span {
+.footer-website>span {
     position: relative;
 
     font-size: 22px;
@@ -671,23 +678,36 @@
     position: absolute;
     top: -380px;
     right: 0;
+    z-index: 1;
 }
 
-.footer-creci{
+.footer-creci {
     font-size: 20px;
     font-weight: bold;
     position: absolute;
     color: white;
     right: 15px;
-    top: 40%;
+    top: 30%;
+    z-index: 8;
 }
 
 #logoE {
-    width: 15%;
+    width: 22%;
     height: auto;
     position: absolute;
     top: -195%;
     right: 10px;
+    z-index: 4
+}
+
+#mancha {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    left: -20%;
+    top: 38%;
+    z-index: 1;
+
 }
 
 .span-bold {
@@ -768,40 +788,6 @@
    BOTÕES
 ============================================================ */
 
-.preview-actions {
-
-    display: flex;
-
-    gap: 12px;
-
-}
-
-
-.preview-actions button {
-
-    height: 48px;
-
-    padding: 0 22px;
-
-    border-radius: 8px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 9px;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-    cursor: pointer;
-
-    transition: 0.2s;
-
-}
 
 
 /* limpar */
@@ -824,26 +810,8 @@
 }
 
 
-/* download */
-
-.download-button {
-
-    border: 1px solid #e30613;
-
-    background: #e30613;
-
-    color: #ffffff;
-
-}
 
 
-.download-button:hover {
-
-    background: #c9000b;
-
-    transform: translateY(-1px);
-
-}
 
 
 /* ============================================================

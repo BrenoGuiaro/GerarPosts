@@ -112,9 +112,9 @@
 
     background:white;
 
-    border:1px solid #dddddd;
+  
 
-    cursor:pointer;
+
 
     transition:.25s;
 
@@ -122,26 +122,13 @@
 
     font-weight:500;
 
-    color:#2b2b2b;
 }
 
 .header-button svg{
     font-size:22px;
 }
 
-.header-button:hover{
 
-    background:#d70010;
-
-    color:white;
-
-    border-color:#d70010;
-
-    transform:translateY(-2px);
-
-    box-shadow:
-        0 8px 18px rgba(215,0,16,.25);
-}
 
 /* ========================== */
 /* RESPONSIVO */

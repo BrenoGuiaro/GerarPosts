@@ -1,5 +1,5 @@
 import "./Header.css";
-import { FiInfo, FiImage } from "react-icons/fi";
+import { FiImage } from "react-icons/fi";
 import logo from '../../images/logo.png'
 
 export default function Header() {
@@ -30,8 +30,8 @@ export default function Header() {
 
       {/* Botão */}
       <button className="header-button">
-        <FiInfo />
-        Sobre o projeto
+        
+       
       </button>
 
     </header>
