@@ -8,7 +8,6 @@
 
     background: #ffffff;
 
-    border-radius: 18px;
 
     padding: 28px;
 
@@ -126,7 +125,7 @@
 
     background: #ffffff;
 
-    border-radius: 12px;
+
 
 }
 
@@ -609,60 +608,86 @@
 ============================================================ */
 
 .footer-website {
-
+    position: relative;
     flex: 1;
-
     display: flex;
-
     align-items: center;
     gap: 18px;
-
+    overflow: visible;
 }
 
+/* Faixa branca inclinada */
 .footer-website::after {
-
     content: "";
-
     position: absolute;
 
-
+    left: -20px;
     top: 0;
 
     width: 40%;
-
     height: 100%;
 
-    background: rgb(164, 92, 92);
+    background: #ffffff;
 
     transform: skewX(28deg);
 
+    z-index: 0;
+
+    pointer-events: none;
 }
 
-
+/* Ícone */
 .footer-website svg {
+    position: relative;
 
     width: 40px;
-
     height: 40px;
 
     color: #e30613;
 
-    z-index: 1;
-    padding-left: 30px;
+    z-index: 2;
 
+    padding-left: 30px;
 }
 
-
-.footer-website span {
+/* Texto */
+.footer-website > span {
+    position: relative;
 
     font-size: 22px;
-
     color: #111111;
 
-
     white-space: nowrap;
-    z-index: 1;
 
+    z-index: 3;
+}
+
+/* Parte em negrito */
+.footer-website .span-bold {
+    font-weight: bold;
+}
+
+.footer-website img {
+    position: absolute;
+    top: -380px;
+    right: 0;
+}
+
+.footer-creci{
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    color: white;
+    right: 15px;
+    top: 40%;
+}
+
+#logoE {
+    width: 15%;
+    height: auto;
+    position: absolute;
+    top: -195%;
+    right: 10px;
 }
 
 .span-bold {

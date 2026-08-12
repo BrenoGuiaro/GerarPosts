@@ -4,7 +4,6 @@ import html2canvas from "html2canvas";
 
 import {
     FiEye,
-    FiPhone,
     FiGlobe,
     FiRotateCcw,
     FiDownload
@@ -13,9 +12,10 @@ import {
 import { FaPhoneAlt as Phone} from "react-icons/fa";
 
 import { FaMapMarkerAlt as IconMap } from "react-icons/fa";
-import logoC from '../../images/logo2.png'
+import logoC from '../../images/logo.png'
 
-import teste from '../../images/teste.png'
+import detalhe from '../../images/detalhe.png'
+import logoE from '../../images/logoE.png'
 
 
 export default function Preview({
@@ -371,7 +371,8 @@ export default function Preview({
                                     https://<span className="span-bold">mjeronimoimoveis</span>.com.br
                                 </span>~
 
-                                <img src={teste}/>
+                                <img src={detalhe} alt="detalhe" />
+                                <img src={logoE} alt="logoE" id="logoE"/>
 
                             </div>
 
