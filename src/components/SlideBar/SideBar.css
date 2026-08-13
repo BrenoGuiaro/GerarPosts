@@ -257,6 +257,29 @@ select:focus {
 
 }
 
+.remove-mancha {
+    border: 1px solid grey;
+
+    background: #fff;
+
+    color: black;
+
+
+
+    margin-top: 20px;
+
+}
+
+
+.remove-mancha:hover {
+    border: none;
+    background: #e30613;
+    color: #fff;
+
+    transform: translateY(-1px);
+
+}
+
 
 .preview-actions {
 
@@ -264,8 +287,8 @@ select:focus {
 
     gap: 12px;
 
-   align-items: center;
-   justify-content: center;
+    align-items: center;
+    justify-content: center;
 
 }
 

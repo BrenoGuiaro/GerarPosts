@@ -24,7 +24,9 @@ export default function Preview({
     tipoImovel,
     bairro,
     onClear,
-    coverRef
+    coverRef,
+    setStMancha,
+    stMancha
 
 }) {
 
@@ -155,7 +157,7 @@ export default function Preview({
                             INFORMAÇÕES DO IMÓVEL
                         ================================================== */}
 
-                        <img src={mancha} alt="mancha" id="mancha"/>
+                        <img src={mancha} alt="mancha" className={stMancha ? "mancha-none" : "mancha"}/>
 
                         <div className="cover-information">
 

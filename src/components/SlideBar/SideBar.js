@@ -8,7 +8,9 @@ export default function SidebarForm({
   tipoAnuncio, setTipoAnuncio,
   tipoImovel, setTipoImovel,
   bairro, setBairro,
-  coverRef, downloadImage
+  coverRef, downloadImage,
+  stMancha, setStMancha,
+  removeMancha
 }) {
 
   const handleImageChange = (event) => {
@@ -18,6 +20,7 @@ export default function SidebarForm({
       setImagePreview(imageUrl);
     }
   };
+
 
 
 
@@ -139,6 +142,12 @@ export default function SidebarForm({
 
             BAIXAR PNG
 
+          </button>
+
+          <button
+            className="remove-mancha"
+            onClick={removeMancha}>
+            {stMancha ? 'Adicionar mancha' : 'Remover Mancha'}
           </button>
 
         </div>

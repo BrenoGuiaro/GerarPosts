@@ -1,7 +1,7 @@
 import Header from "./components/Header/Header.js";
 import SideBar from "./components/SlideBar/SideBar.js";
 import '../src/App.css'
-import { useState, useRef  } from "react";
+import { useState, useRef } from "react";
 import Preview from "./components/Preview/Preview.js";
 import html2canvas from "html2canvas";
 
@@ -151,6 +151,14 @@ function App() {
 
   };
 
+  const [stMancha, setStMancha] = useState(false)
+
+  const removeMancha = () => {
+    console.log(stMancha)
+    setStMancha(prev => !prev)
+  }
+
+
   return (
     <>
       <Header />
@@ -173,6 +181,11 @@ function App() {
 
           coverRef={coverRef}
           downloadImage={downloadImage}
+
+          stMancha={stMancha}
+          setStMancha={setStMancha}
+
+          removeMancha={removeMancha}
         />
         <Preview
           imagePreview={imagePreview}
@@ -183,6 +196,9 @@ function App() {
           bairro={bairro}
 
           coverRef={coverRef}
+
+          stMancha={stMancha}
+          setStMancha={setStMancha}
         />
       </div>
     </>
