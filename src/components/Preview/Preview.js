@@ -7,7 +7,8 @@ import {
     FiGlobe,
 } from "react-icons/fi";
 
-import { FaPhoneAlt as Phone} from "react-icons/fa";
+import { FaPhoneAlt as Phone } from "react-icons/fa";
+import { PiMedalBold as Crecisp } from "react-icons/pi";
 
 import { FaMapMarkerAlt as IconMap } from "react-icons/fa";
 import logoC from '../../images/logo.png'
@@ -136,7 +137,7 @@ export default function Preview({
 
                         <div className="cover-code">
 
-                            <div className="code-line"></div>
+                            
 
                             <div className="code-content">
 
@@ -157,7 +158,7 @@ export default function Preview({
                             INFORMAÇÕES DO IMÓVEL
                         ================================================== */}
 
-                        <img src={mancha} alt="mancha" className={stMancha ? "mancha-none" : "mancha"}/>
+                        <img src={mancha} alt="mancha" className={stMancha ? "mancha-none" : "mancha"} />
 
                         <div className="cover-information">
 
@@ -232,14 +233,10 @@ export default function Preview({
                                     https://<span className="span-bold">mjeronimoimoveis</span>.com.br
                                 </span>
 
-                                <img src={detalhe} alt="detalhe" />
-                                <img src={logoE} alt="logoE" id="logoE"/>
-
-                                
-
                             </div>
 
                             <div className="footer-creci">
+                                <Crecisp/>
                                 CRECISP: 278536F
                             </div>
 
@@ -256,7 +253,7 @@ export default function Preview({
 
 
 
- 
+
         </section>
 
     );
