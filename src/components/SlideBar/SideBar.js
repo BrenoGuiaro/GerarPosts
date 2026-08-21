@@ -104,6 +104,8 @@ export default function SidebarForm({
             <option>Apartamento</option>
             <option>Terreno</option>
             <option>Comercial</option>
+            <option>Chácara</option>
+            <option>Sítio</option>
           </select>
 
         </div>

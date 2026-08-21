@@ -13,8 +13,8 @@ import { PiMedalBold as Crecisp } from "react-icons/pi";
 import { FaMapMarkerAlt as IconMap } from "react-icons/fa";
 import logoC from '../../images/logo.png'
 
-import detalhe from '../../images/detalhe.png'
-import logoE from '../../images/logoE.png'
+
+
 import mancha from '../../images/mancha.png'
 
 

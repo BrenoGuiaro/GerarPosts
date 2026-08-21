@@ -538,7 +538,7 @@
 
     height: 27px;
 
-    padding-right: 15px;
+    padding-right: 5px;
     color: #e30613;
 
 }
@@ -575,8 +575,8 @@
     height: 33px;
 
     color: #e30613;
+  
 
-   padding-right: 15px;
 
 }
 
@@ -615,7 +615,8 @@
     color: #e30613;
     width: 35px;
     height: 35px;
-    padding-right: 15px;
+    
+   
 }
 
 #logoE {
