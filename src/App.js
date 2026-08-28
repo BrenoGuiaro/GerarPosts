@@ -154,8 +154,13 @@ function App() {
   const [stMancha, setStMancha] = useState(false)
 
   const removeMancha = () => {
-    console.log(stMancha)
     setStMancha(prev => !prev)
+  }
+
+  const [boxCod, setBoxCod] = useState(true)
+
+  const removeBox = () => {
+    setBoxCod(prev => !prev)
   }
 
 
@@ -186,7 +191,12 @@ function App() {
           setStMancha={setStMancha}
 
           removeMancha={removeMancha}
-        />
+
+          boxCod={boxCod}
+          setBoxCod={setBoxCod}
+
+          removeBox={removeBox}
+          />
         <Preview
           imagePreview={imagePreview}
           codImob={codImob}
@@ -199,6 +209,9 @@ function App() {
 
           stMancha={stMancha}
           setStMancha={setStMancha}
+
+          boxCod={boxCod}
+          setBoxCod={setBoxCod}
         />
       </div>
     </>

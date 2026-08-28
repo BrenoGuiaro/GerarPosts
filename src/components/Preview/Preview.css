@@ -254,6 +254,25 @@
 
 }
 
+.cover-code-none {
+
+    position: absolute;
+    right: 0;
+    top: 155px;
+    width: 300px;
+    height: 70px;
+    z-index: 12;
+    background: #e30613;
+    border-radius: 14px 0 0 14px;
+    color: #ffffff;
+    display: none;
+    align-items: center;
+    padding-left: 30px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+
+}
+
 
 /* linha vertical */
 

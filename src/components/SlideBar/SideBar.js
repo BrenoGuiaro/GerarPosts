@@ -10,7 +10,9 @@ export default function SidebarForm({
   bairro, setBairro,
   coverRef, downloadImage,
   stMancha, setStMancha,
-  removeMancha
+  removeMancha,
+  boxCod, setBoxCod,
+  removeBox
 }) {
 
   const handleImageChange = (event) => {
@@ -126,15 +128,6 @@ export default function SidebarForm({
 
         <div className="preview-actions">
 
-
-
-
-
-
-
-
-
-
           <button
             className="download-button"
             onClick={downloadImage}
@@ -146,12 +139,22 @@ export default function SidebarForm({
 
           </button>
 
+
+
+        </div>
+
+        <div className="boxOptions">
           <button
             className="remove-mancha"
             onClick={removeMancha}>
             {stMancha ? 'Adicionar mancha' : 'Remover Mancha'}
           </button>
 
+          <button
+            className="remove-mancha"
+            onClick={removeBox}>
+            {boxCod ? 'Remover Codigo' : 'Adicionar Codigo'}
+          </button>
         </div>
 
       </div>
