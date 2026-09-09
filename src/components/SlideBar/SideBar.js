@@ -108,6 +108,7 @@ export default function SidebarForm({
             <option>Comercial</option>
             <option>Chácara</option>
             <option>Sítio</option>
+            <option>Fazenda</option>
           </select>
 
         </div>

@@ -12,6 +12,9 @@ import { PiMedalBold as Crecisp } from "react-icons/pi";
 
 import { FaMapMarkerAlt as IconMap } from "react-icons/fa";
 import logoC from '../../images/logo.png'
+
+
+
 import mancha from '../../images/mancha.png'
 
 
@@ -24,7 +27,8 @@ export default function Preview({
     onClear,
     coverRef,
     setStMancha,
-    stMancha
+    stMancha,
+    boxCod,
 
 }) {
 
@@ -132,11 +136,11 @@ export default function Preview({
 
                         </div>
 
-                        <div className="cover-code">
+                        <div className={boxCod ? "cover-code" : "cover-code-none"}>
 
-                            
 
-                            <div className="code-content">
+
+                            <div className="code-content" >
 
                                 <span>
                                     CÓD. DO IMÓVEL
@@ -233,7 +237,7 @@ export default function Preview({
                             </div>
 
                             <div className="footer-creci">
-                                <Crecisp/>
+                                <Crecisp />
                                 CRECISP: 278536F
                             </div>
 
