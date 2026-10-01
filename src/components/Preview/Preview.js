@@ -23,8 +23,8 @@ export default function Preview({
     bairro,
     onClear,
     coverRef,
-    setStMancha,
-    stMancha
+    stMancha,
+    boxCod
 
 }) {
 
@@ -132,7 +132,7 @@ export default function Preview({
 
                         </div>
 
-                        <div className="cover-code">
+                        <div className={boxCod ? "cover-code" : "cover-code-none"}>
 
                             
 
