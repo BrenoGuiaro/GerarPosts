@@ -239,7 +239,7 @@
     position: absolute;
     right: 0;
     top: 155px;
-    width: 160px;
+    width: 250px;
     height: 70px;
     z-index: 12;
     background: #e30613;
@@ -293,7 +293,6 @@
 .code-content {
 
     display: flex;
-
     flex-direction: column;
     align-items: center;
     justify-content: center;
